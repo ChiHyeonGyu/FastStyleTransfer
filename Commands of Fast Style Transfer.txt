@@ -1,0 +1,41 @@
+﻿Commands of Fast Style Transfer
+20165526 정수지
+Requirements
+Python2.7
+TensorFlow 1.n
+Scipy & Numpy
+Download the pre-trained VGG network and place it in the top level of the repository(~500MB)
+For training:
+it is recommended to use a GPU to get good results within a reasonable timeframe
+You will need an image dataset to train your networks. I used the Microsoft COCO dataset and resized the images to 256x256 pixels
+Generation of styled images can be run on a CPU or GPU. Some pre-trained style networks can be download from github(~700MB)
+
+activate tensorflow
+1.	아나콘다 설치
+Anaconda Prompt 관리자 권환으로 실행
+pip upgrade
+python -m pip install –upgrade pip
+
+2.	텐서플로우 설치
+conda create -n tensorflow python=3.5
+Proceed([y]/n)? Y
+activate tensorflow
+pip install tensorflow
+3.	테스트 텐서플로우
+(tensorflow)>python #python 터미널 열기
+import tensorflow as tf
+hello =tf.constant(‘Hello,TensorFlow!’)
+sess=tf.Sessin()
+print(sess.run(hello))
+a=tf.constant(10)
+b=tf.constant(32)
+print(sess.run(a+b))
+
+4.	Numpy and Scipy
+pip install scipy
+import numpy as np
+import scipy as sp
+5.	Test
+python C:\fast-style-transfer\stylize_image.py –content C:\fast-style-transfer\examples\dog.jpg –network=path C:\fast-style-transfer\pretrained-networks\rain-princess=network –output-path C:\fast-style-transfer\output.jpg
+6.	Results
+
